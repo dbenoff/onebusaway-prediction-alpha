@@ -24,5 +24,6 @@ In this step, we read through each of the records in inferredlocation and try to
 
 Run PopulateArrivalsRunner with no args.  This can take a VERY long time to run.  Also note that any existing arrivals data in the DB will be lost.
 
-### Generate arrivals data
+### Generate predictions accuracy data
 
+To run prediction tests for a given GTFS trip id, launch SegmentLevelPredictionsRunner, providing a GTFS trip ID and a similarity threshold as arguments.
