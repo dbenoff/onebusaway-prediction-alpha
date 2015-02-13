@@ -265,6 +265,22 @@ public class TripDataService {
         return stopList;
     }
 
+    public List<Double> getDistancesByGtfsTripId(String tripId){
+        String query = " select r.distances from routes_trips rt\n" +
+                " join routes r on r.id = rt.routeid\n" +
+                " where rt.tripid = '" + tripId + "'";
+
+        String stops = jdbcTemplate.queryForObject(query, (rs, rowNum) -> {
+            return rs.getString(1);
+        });
+        List<Double> stopList = new ArrayList<>();
+        String[] elements = stops.split(",");
+        for(int i = 0; i < elements.length; i++){
+            stopList.add(Double.parseDouble(elements[i]));
+        }
+        return stopList;
+    }
+
     public Observation getObservationById(Long id){
         String query = "select * from inferredlocation_test " +
                 "where id = " + id;

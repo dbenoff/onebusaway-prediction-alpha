@@ -257,7 +257,7 @@ public class SegmentLevelMahoutPredictionsGenerator {
 
         rows = new ArrayList();
 
-        String filePath = testOutputPath + "_" + gtfsTripId + "_" + threshold.toString() + useTimeOfDayDimension.toString() + "_" + useTravelTimeDimension.toString() + ".csv";
+        String filePath = testOutputPath + "_" + gtfsTripId + "_" + threshold.toString() + "_" + useTimeOfDayDimension.toString() + "_" + useTravelTimeDimension.toString() + ".csv";
         f = new File(filePath);
 
         f.delete();
